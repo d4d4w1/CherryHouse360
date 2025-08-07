@@ -79,21 +79,16 @@
 <script src="data.js"></script>
 <script src="index.js"></script>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Marzipano Tour</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <!-- QUI va la tua struttura di Marzipano normalmente -->
-  <div id="pano"></div>
-
-  <!-- SCRIPT JS -->
-  <script src="data.js"></script>
-  <script src="index.js"></script>
+<audio id="bg-music" src="music.mp3" loop></audio>
+<script>
+  // Avvia la musica al primo clic o tocco dell’utente
+  document.addEventListener('click', function () {
+    const audio = document.getElementById('bg-music');
+    if (audio && audio.paused) {
+      audio.play().catch(e => console.log('Audio blocked:', e));
+    }
+  }, { once: true });
+</script>
 
 </body>
 </html>
