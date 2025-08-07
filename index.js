@@ -14,6 +14,21 @@
  * limitations under the License.
  */
 'use strict';
+// Aggiunge audio di sottofondo
+var audio = document.createElement('audio');
+audio.id = "bg-audio";
+audio.src = "backgroundmusic.mp3";
+audio.loop = true;
+document.body.appendChild(audio);
+
+// Fa partire l’audio dopo il primo clic
+document.addEventListener('click', function () {
+  if (audio.paused) {
+    audio.play().catch(function (err) {
+      console.log("Errore nel riprodurre l'audio:", err);
+    });
+  }
+}, { once: true });
 
 (function() {
   var Marzipano = window.Marzipano;
