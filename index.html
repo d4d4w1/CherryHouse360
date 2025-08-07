@@ -79,16 +79,42 @@
 <script src="data.js"></script>
 <script src="index.js"></script>
 
-<button id="audioToggle" style="
+<audio id="bg-music" loop>
+  <source src="audio.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<button id="toggle-audio" style="
   position: absolute;
   top: 20px;
-  right: 20px;
+  left: 20px;
   z-index: 9999;
-  padding: 10px 20px;
-  font-size: 16px;
+  background-color: rgba(255,255,255,0.7);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
 ">
-  🔊 Audio
+  🔊
 </button>
+
+<script>
+  const audio = document.getElementById("bg-music");
+  const btn = document.getElementById("toggle-audio");
+
+  let playing = false;
+
+  btn.addEventListener("click", () => {
+    if (!playing) {
+      audio.play();
+      btn.innerText = "🔇";
+    } else {
+      audio.pause();
+      btn.innerText = "🔊";
+    }
+    playing = !playing;
+  });
+</script>
+
 
 </body>
 </html>
