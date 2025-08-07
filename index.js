@@ -32,6 +32,7 @@ document.addEventListener('click', function () {
 // ===== Fine aggiunta audio =====
 
 
+
 (function() {
   var Marzipano = window.Marzipano;
   var bowser = window.bowser;
