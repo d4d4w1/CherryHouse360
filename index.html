@@ -88,6 +88,23 @@
 <!-- Pulsante per attivare/disattivare la musica -->
 <button id="music-toggle">🔇</button>
 
+<script>
+const audio = document.getElementById('bg-music');
+const toggleButton = document.getElementById('music-toggle');
+
+let isPlaying = false;
+
+toggleButton.addEventListener('click', () => {
+  if (!isPlaying) {
+    audio.play();
+    toggleButton.textContent = '🔊';
+  } else {
+    audio.pause();
+    toggleButton.textContent = '🔇';
+  }
+  isPlaying = !isPlaying;
+});
+</script>
 
 </body>
 </html>
