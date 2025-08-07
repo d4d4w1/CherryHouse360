@@ -30,10 +30,8 @@ document.addEventListener('click', function () {
 }, { once: true });
 // ===== Fine aggiunta audio =====
 
-// === Pulsante per attivare/disattivare audio ===
-
 var audioButton = document.createElement('button');
-audioButton.textContent = '🔊'; // inizialmente attivo
+audioButton.textContent = '🔊';
 audioButton.style.position = 'fixed';
 audioButton.style.top = '15px';
 audioButton.style.right = '15px';
