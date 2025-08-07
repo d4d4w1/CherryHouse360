@@ -84,6 +84,17 @@
   Il tuo browser non supporta l'audio HTML5.
 </audio>
 
+<script>
+  document.addEventListener('click', function () {
+    var audio = document.getElementById('bg-audio');
+    if (audio && audio.paused) {
+      audio.play().catch(function(err){
+        console.log("Errore riproduzione audio:", err);
+      });
+    }
+  }, { once: true });
+</script>
+
 
 </body>
 </html>
