@@ -15,6 +15,16 @@
  */
 'use strict';
 
+ document.addEventListener('click', function () {
+  var audio = document.getElementById('bg-audio');
+  if (audio && audio.paused) {
+    audio.play().catch(function(err){
+      console.log("Errore riproduzione audio:", err);
+    });
+  }
+}, { once: true }); // Esegui solo al primo click
+
+
 // ===== Inizio aggiunta audio =====
 var audio = document.createElement('audio');
 audio.src = "music.mp3";  // ATTENTO: il nome deve essere esatto
