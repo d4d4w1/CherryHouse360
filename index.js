@@ -15,6 +15,22 @@
  */
 'use strict';
 
+// ===== Inizio aggiunta audio =====
+var audio = document.createElement('audio');
+audio.src = "music.mp3";  // ATTENTO: il nome deve essere esatto
+audio.loop = true;
+audio.preload = "auto";
+document.body.appendChild(audio);
+
+document.addEventListener('click', function () {
+  if (audio.paused) {
+    audio.play().catch(function (err) {
+      console.log("Errore riproduzione audio:", err);
+    });
+  }
+}, { once: true });
+// ===== Fine aggiunta audio =====
+
 
 (function() {
   var Marzipano = window.Marzipano;
