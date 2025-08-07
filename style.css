@@ -829,19 +829,4 @@ body.view-control-buttons .viewControlButton {
   margin-left: 105px;
 }
 
-<style>
-#music-toggle {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999;
-  padding: 10px 15px;
-  font-size: 20px;
-  border: none;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.7);
-  cursor: pointer;
-  box-shadow: 0 0 5px rgba(0,0,0,0.3);
-}
-</style>
 
