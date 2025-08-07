@@ -79,6 +79,25 @@
 <script src="data.js"></script>
 <script src="index.js"></script>
 
+  
+<audio id="bg-music" src="music.mp3" loop></audio>
+
+<script>
+  // Riproduce la musica al primo clic o tocco sullo schermo
+  function startMusic() {
+    const audio = document.getElementById('bg-music');
+    if (audio && audio.paused) {
+      audio.play().catch(err => {
+        console.log('Errore nella riproduzione audio:', err);
+      });
+    }
+    document.removeEventListener('click', startMusic);
+    document.removeEventListener('touchstart', startMusic);
+  }
+
+  document.addEventListener('click', startMusic, { once: true });
+  document.addEventListener('touchstart', startMusic, { once: true });
+</script>
 
 
 </body>
