@@ -15,22 +15,6 @@
  */
 'use strict';
 
-// Aggiunge audio di sottofondo
-var audio = document.createElement('audio');
-audio.src = "music.mp3"; // ← ATTENTO: il nome deve combaciare
-audio.loop = true;
-audio.preload = "auto";
-document.body.appendChild(audio);
-
-// Fa partire l’audio al primo clic
-document.addEventListener('click', function () {
-  if (audio.paused) {
-    audio.play().catch(function (err) {
-      console.log("Errore nel riprodurre l'audio:", err);
-    });
-  }
-}, { once: true });
-
 
 
 
