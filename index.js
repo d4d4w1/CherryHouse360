@@ -30,6 +30,31 @@ document.addEventListener('click', function () {
 }, { once: true });
 // ===== Fine aggiunta audio =====
 
+// === Pulsante per attivare/disattivare audio ===
+
+var audioButton = document.createElement('button');
+audioButton.textContent = '🔊'; // inizialmente attivo
+audioButton.style.position = 'fixed';
+audioButton.style.top = '15px';
+audioButton.style.right = '15px';
+audioButton.style.zIndex = 9999;
+audioButton.style.fontSize = '24px';
+audioButton.style.padding = '5px 10px';
+audioButton.style.border = 'none';
+audioButton.style.background = 'rgba(255,255,255,0.8)';
+audioButton.style.borderRadius = '10px';
+audioButton.style.cursor = 'pointer';
+document.body.appendChild(audioButton);
+
+audioButton.addEventListener('click', function () {
+  if (audio.paused) {
+    audio.play();
+    audioButton.textContent = '🔊';
+  } else {
+    audio.pause();
+    audioButton.textContent = '🔇';
+  }
+});
 
 (function() {
   var Marzipano = window.Marzipano;
