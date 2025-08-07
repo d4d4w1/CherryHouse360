@@ -391,3 +391,20 @@
   switchScene(scenes[0]);
 
 })();
+
+document.addEventListener("DOMContentLoaded", function () {
+  const audio = document.getElementById("background-audio");
+  const toggleButton = document.getElementById("audio-toggle");
+  let isPlaying = false;
+
+  toggleButton.addEventListener("click", () => {
+    if (isPlaying) {
+      audio.pause();
+      toggleButton.textContent = "🔈";
+    } else {
+      audio.play();
+      toggleButton.textContent = "🔊";
+    }
+    isPlaying = !isPlaying;
+  });
+});
