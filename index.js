@@ -16,7 +16,7 @@
 'use strict';
 // ===== Inizio aggiunta audio =====
 var audio = document.createElement('audio');
-audio.src = "backgroundmusic.mp3";  // ATTENTO: il nome deve essere esatto
+audio.src = "music.mp3";  // ATTENTO: il nome deve essere esatto
 audio.loop = true;
 audio.preload = "auto";
 document.body.appendChild(audio);
