@@ -829,15 +829,4 @@ body.view-control-buttons .viewControlButton {
   margin-left: 105px;
 }
 
-#audio-toggle {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999;
-  padding: 10px;
-  font-size: 24px;
-  background-color: rgba(255, 255, 255, 0.8);
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
+
