@@ -15,6 +15,18 @@
  */
 'use strict';
 
+// Inizio musica dopo primo clic o tocco
+function startBackgroundMusic() {
+  const audio = new Audio('music.mp3');
+  audio.loop = true;
+  audio.play();
+  document.removeEventListener('click', startBackgroundMusic);
+  document.removeEventListener('touchstart', startBackgroundMusic);
+}
+
+// Attendi prima interazione dell’utente
+document.addEventListener('click', startBackgroundMusic);
+document.addEventListener('touchstart', startBackgroundMusic);
 
 
 
