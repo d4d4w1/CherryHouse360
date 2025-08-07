@@ -14,45 +14,7 @@
  * limitations under the License.
  */
 'use strict';
-// ===== Inizio aggiunta audio =====
-var audio = document.createElement('audio');
-audio.src = "music.mp3";  // ATTENTO: il nome deve essere esatto
-audio.loop = true;
-audio.preload = "auto";
-document.body.appendChild(audio);
 
-document.addEventListener('click', function () {
-  if (audio.paused) {
-    audio.play().catch(function (err) {
-      console.log("Errore riproduzione audio:", err);
-    });
-  }
-}, { once: true });
-// ===== Fine aggiunta audio =====
-
-var audioButton = document.createElement('button');
-audioButton.textContent = '🔊';
-audioButton.style.position = 'fixed';
-audioButton.style.top = '15px';
-audioButton.style.right = '15px';
-audioButton.style.zIndex = 9999;
-audioButton.style.fontSize = '24px';
-audioButton.style.padding = '5px 10px';
-audioButton.style.border = 'none';
-audioButton.style.background = 'rgba(255,255,255,0.8)';
-audioButton.style.borderRadius = '10px';
-audioButton.style.cursor = 'pointer';
-document.body.appendChild(audioButton);
-
-audioButton.addEventListener('click', function () {
-  if (audio.paused) {
-    audio.play();
-    audioButton.textContent = '🔊';
-  } else {
-    audio.pause();
-    audioButton.textContent = '🔇';
-  }
-});
 
 (function() {
   var Marzipano = window.Marzipano;
