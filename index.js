@@ -408,3 +408,11 @@ document.addEventListener("DOMContentLoaded", function () {
     isPlaying = !isPlaying;
   });
 });
+
+function startAudioOnce() {
+  const audio = document.getElementById("background-audio");
+  if (audio.paused) {
+    audio.play();
+  }
+  document.body.onclick = null; // disabilita dopo il primo click
+}
