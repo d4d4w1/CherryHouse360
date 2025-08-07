@@ -416,3 +416,21 @@ function startAudioOnce() {
   }
   document.body.onclick = null; // disabilita dopo il primo click
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const audio = document.getElementById("background-music");
+    const button = document.getElementById("toggle-audio");
+
+    // Tentativo di avvio automatico
+    audio.volume = 0.5;
+
+    button.addEventListener("click", function () {
+        if (audio.paused) {
+            audio.play();
+            button.textContent = "🔊";
+        } else {
+            audio.pause();
+            button.textContent = "🔇";
+        }
+    });
+});
