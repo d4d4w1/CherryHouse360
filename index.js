@@ -14,21 +14,22 @@
  * limitations under the License.
  */
 'use strict';
-// Aggiunge audio di sottofondo
+// ===== Inizio aggiunta audio =====
 var audio = document.createElement('audio');
-audio.id = "bg-audio";
-audio.src = "backgroundmusic.mp3";
+audio.src = "backgroundmusic.mp3";  // ATTENTO: il nome deve essere esatto
 audio.loop = true;
+audio.preload = "auto";
 document.body.appendChild(audio);
 
-// Fa partire l’audio dopo il primo clic
 document.addEventListener('click', function () {
   if (audio.paused) {
     audio.play().catch(function (err) {
-      console.log("Errore nel riprodurre l'audio:", err);
+      console.log("Errore riproduzione audio:", err);
     });
   }
 }, { once: true });
+// ===== Fine aggiunta audio =====
+
 
 (function() {
   var Marzipano = window.Marzipano;
