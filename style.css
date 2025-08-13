@@ -829,4 +829,9 @@ body.view-control-buttons .viewControlButton {
   margin-left: 105px;
 }
 
+.sceneList,
+.sceneName {
+  display: none !important;
+}
+
 
